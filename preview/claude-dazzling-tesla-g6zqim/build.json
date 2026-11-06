@@ -1,0 +1,19 @@
+{
+  "env": "preview",
+  "version": "0.1.0",
+  "sha": "634f1389227aa85c94b17abed36d359fce4e490c",
+  "shortSha": "634f138",
+  "branch": "claude/dazzling-tesla-g6zqim",
+  "builtAt": "2026-11-06T15:56:49.850Z",
+  "v": "0.1.0-634f138",
+  "allowIndexing": false,
+  "siteUrl": "https://domusgpt.github.io/Rumpflaw/preview/claude-dazzling-tesla-g6zqim/",
+  "pages": [
+    "404.html",
+    "accessibility.html",
+    "dev/index.html",
+    "disclaimer.html",
+    "index.html",
+    "privacy.html"
+  ]
+}

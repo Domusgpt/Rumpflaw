@@ -1,0 +1,46 @@
+{
+  "project": "Rumpf Law, P.C. website",
+  "repo": "https://github.com/Domusgpt/Rumpflaw",
+  "entries": [
+    {
+      "timestamp": "2026-11-06T15:50Z",
+      "version": "0.1.0",
+      "codename": "Tidewater",
+      "session": "session_01UqrwaZ1xZHCSYcMWD4jzB5",
+      "branch": "claude/dazzling-tesla-g6zqim",
+      "title": "Initial build — GSAP scroll experience, NJ firm content, Pages previews",
+      "summary": "Researched the New Jersey firm (Rumpf Law, P.C., Tuckerton) from official municipal records; built the Tidewater Editorial site with a scroll-locked intro, pinned WebGL hero and dawn-disc handoff, horizontal practice gallery, attorneys, approach, service-area chart, FAQ and contact; added middleware (form + telemetry pipelines, Firebase functions), multi-branch GitHub Pages deploy, CI, and docs.",
+      "changes": [
+        "Pages: home, privacy, legal notices, accessibility, 404, dev track",
+        "Zero-dependency build: partials, templating, CSP hash, JSON-LD, env-aware robots/noindex",
+        "Motion: intro lock, hero pin + dawn disc, word scrub, line reveals, horizontal spreads, portrait clips, drawn steps, chart draw",
+        "WebGL tide-field shader with WebGL1/CSS fallbacks and reduced-motion static frame",
+        "Inquiry pipeline (shared schema) + privacy-first telemetry pipeline",
+        "Firebase inquiry/collect functions + deny-all Firestore rules",
+        "GitHub Pages: main → /, recent branches → /preview/<slug>/, previews.json",
+        "CI: unit, e2e (a11y/motion/perf), visual artifacts",
+        "Docs: content review, compliance, deployment, Visual Codex entry",
+        "Firebase Hosting target with security headers (recommended production host)"
+      ],
+      "fixes": 13,
+      "verification": [
+        "unit 23/23",
+        "e2e 75/75",
+        "axe 0 violations",
+        "CLS 0.000",
+        "~480 KB page weight",
+        "29 screenshots reviewed",
+        "GitHub CI run #1 green",
+        "Pages deploy run #1 green (gh-pages published)",
+        "production build verified in browser"
+      ],
+      "open": [
+        "Repo admin: Settings → Pages → Source gh-pages (one-time)",
+        "Firm confirmation of flagged facts",
+        "Firm-owned domain",
+        "Deploy Firebase",
+        "Headshots"
+      ]
+    }
+  ]
+}

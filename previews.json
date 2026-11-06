@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-11-06T15:56:49.793Z",
+  "base": "https://domusgpt.github.io/Rumpflaw/",
+  "production": null,
+  "previews": [
+    {
+      "branch": "claude/dazzling-tesla-g6zqim",
+      "slug": "claude-dazzling-tesla-g6zqim",
+      "sha": "634f1389227aa85c94b17abed36d359fce4e490c",
+      "updated": "2026-11-06T15:56:39Z",
+      "path": "preview/claude-dazzling-tesla-g6zqim/",
+      "kind": "built"
+    }
+  ]
+}
