@@ -11,11 +11,12 @@ and a validated-but-not-sent demo mode on preview builds.
 
 ## Deploy (one time)
 
+All commands run from the **repository root** (`firebase.json` lives there):
+
 ```bash
-cd integrations/firebase
-firebase use --add            # choose the firm's Firebase project
-firebase functions:secrets:set IP_SALT      # any long random string
-(cd functions && npm install)
+firebase use --add                               # choose the firm's Firebase project
+firebase functions:secrets:set IP_SALT           # any long random string
+(cd integrations/firebase/functions && npm install)
 firebase deploy --only functions,firestore:rules
 ```
 
@@ -25,6 +26,19 @@ Then, in the Google Cloud console for the project:
 2. **Params:** set `ALLOWED_ORIGINS` (e.g. `https://domusgpt.github.io,https://www.<firm-domain>`) when prompted on deploy, or in `functions/.env`.
 3. *(Optional)* Install the **Trigger Email** extension and set `NOTIFY_TO` to staff addresses. The email only says
    that an inquiry arrived (matter type + reference id) — client details stay in Firestore.
+
+### Recommended production host: Firebase Hosting
+
+GitHub Pages cannot send HTTP headers, so it can't provide clickjacking protection (`frame-ancestors`),
+HSTS or `nosniff`. `firebase.json` serves `dist/` with a full security-header set and safe cache rules
+(fonts immutable; HTML/JS/CSS short-lived, because ES-module imports are not fingerprinted):
+
+```bash
+SITE_ENV=production SITE_URL=https://www.<firm-domain>/ node scripts/build.mjs
+firebase deploy --only hosting
+```
+
+GitHub Pages remains the **preview** channel for branches.
 
 ## Wire the site to it
 

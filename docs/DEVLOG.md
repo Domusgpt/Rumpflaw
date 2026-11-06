@@ -66,6 +66,23 @@ what changed, how it was verified, and what's open. Structured mirror: `docs/dev
   keyboard skip link, form validation + demo submit, mobile menu focus trap/Esc.
 - `node tests/visual.mjs` → 29 screenshots + contact sheet reviewed (desktop 1440×900, iPhone 14, reduced-motion full page).
 
+### Deployment & CI (after push, 2026-11-06T15:55Z)
+
+- Pushed `8bc787f` → `origin/claude/dazzling-tesla-g6zqim`.
+- **Pages workflow run #1 — ✅ success** (`gh-pages` published: deployments index at `/` + this branch at
+  `/preview/claude-dazzling-tesla-g6zqim/`). The site answers **404 until the repo's Pages source is set to `gh-pages`**
+  (one-time admin setting; workflows cannot change it).
+- **CI run #1 — ✅ success** on a GitHub-hosted runner (2 m 38 s): install ✅ · build ✅ · unit ✅ · **e2e ✅** · visual capture ✅ · screenshot artifact (`visual-review`) ✅.
+- 31-second smooth-wheel scroll-through video recorded for review (local artifact, not committed).
+
+### Post-push hardening
+
+- Moved `firebase.json` to the repo root and added a **Firebase Hosting** target for production with a full security-header set
+  (HSTS, `frame-ancestors 'none'`, `X-Frame-Options`, `nosniff`, Referrer-Policy, Permissions-Policy, COOP) and cache rules that
+  respect un-fingerprinted ES-module imports. GitHub Pages stays the preview channel (it cannot send headers).
+- Verified the **production** build in a browser: form disabled with a call-us notice (no silent drops), no preview badge,
+  `noindex` until launch, telemetry off, zero errors.
+
 ### Open items
 
 - Firm confirmation of every ⚠ item in `CONTENT_REVIEW.md` (phone, hours, practice scope, titles, Debra's bio/education, headshots, responsible attorney, legislative-service mention).

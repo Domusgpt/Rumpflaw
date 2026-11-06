@@ -41,3 +41,8 @@ Not legal advice — a working checklist for the firm's review. Verify current r
 - Telemetry off by default (`adapter: none`); when enabled it's first-party and aggregate; GPC/DNT fully disable it; PII scrubbed. ✅ (unit-tested)
 - Privacy Policy page (draft) describes the above. ⚠ firm review
 - Staging builds: `noindex, nofollow` + `robots.txt Disallow: /` until `seo.allowIndexing` is set **and** a firm-owned domain is configured. ✅ (unit-tested)
+
+## Security headers
+
+- GitHub Pages (preview channel) cannot send HTTP headers; the page-level CSP meta blocks inline/third-party scripts. ✅
+- Production on Firebase Hosting (`firebase.json`): HSTS, `frame-ancestors 'none'` + `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, COOP. ✅ (applies once hosted there)

@@ -30,7 +30,7 @@ deleted/stale branches disappear automatically).
 
 1. Firm confirms every ⚠ item in `docs/CONTENT_REVIEW.md` and `docs/COMPLIANCE.md`.
 2. Choose a **firm-owned domain** (⚠ `rumpflaw.com` belongs to an unrelated Wisconsin firm).
-3. Set `site.url` in `site.config.json`, add `src/CNAME` (copied by the build) and configure DNS per GitHub Pages docs.
+3. **Recommended:** host production on **Firebase Hosting** (`firebase.json` at the repo root adds HSTS, `frame-ancestors 'none'`, `nosniff`, Permissions-Policy and cache rules — GitHub Pages can't send headers). Set `site.url`, build with `SITE_ENV=production`, `firebase deploy --only hosting`, and connect the domain in the Firebase console. *(Alternative: GitHub Pages with `src/CNAME`, copied by the build, and DNS per GitHub's docs — without security headers.)*
 4. Deploy Firebase (`integrations/firebase/README.md`) and set `forms.inquiry.endpoint` (+ optional telemetry endpoint).
 5. Set `seo.allowIndexing: true`, merge to `main`.
 

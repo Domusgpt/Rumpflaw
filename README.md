@@ -33,6 +33,7 @@ tests/unit/             node:test — schema, telemetry, build invariants, schem
 tests/e2e.mjs           browser QA — a11y, motion integrity, forms, perf budget, keyboard
 tests/visual.mjs        screenshots, contact sheet, optional video
 integrations/firebase/  inquiry + collect functions, Firestore rules
+firebase.json           Firebase Hosting (recommended production host: security headers) + functions + rules
 docs/                   DEVLOG · devtrack.json · CONTENT_REVIEW · COMPLIANCE · DEPLOYMENT · visual-codex/
 ```
 
