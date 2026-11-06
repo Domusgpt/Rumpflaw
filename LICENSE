@@ -1,0 +1,16 @@
+Copyright (c) 2026 Domusgpt. All rights reserved.
+
+This repository contains a proprietary website implementation prepared for
+Rumpf Law, P.C. (Tuckerton, New Jersey). No license to use, copy, modify or
+distribute the source code is granted except by written agreement with the
+copyright holder. Final ownership and license terms are to be set out in the
+engagement agreement between the copyright holder and the client.
+
+The firm's name, attorneys' names and biographical content belong to
+Rumpf Law, P.C. and its attorneys. This website is a draft prepared for the
+firm's review; its content must be approved by the firm before publication
+(see docs/CONTENT_REVIEW.md).
+
+Third-party components are licensed separately under their own terms — see
+THIRD_PARTY_NOTICES.md and the license files shipped alongside each component
+in src/assets/vendor/ and src/assets/fonts/.

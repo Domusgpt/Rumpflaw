@@ -1,0 +1,46 @@
+<!-- @page {"path":"dev/index.html","title":"Dev Track — Rumpf Law, P.C. website","description":"Build metadata, branch previews and the development log for the Rumpf Law, P.C. website.","bodyClass":"page-plain page-dev","robots":"noindex","sitemap":false} -->
+<!doctype html>
+<html lang="en" class="no-js {{ meta.envClass }}">
+<head>
+<!-- @include head -->
+</head>
+<body class="{{ page.bodyClass }}">
+<!-- @include header -->
+<main id="main" tabindex="-1" class="legal dev">
+  <div class="container">
+    <header class="legal__head">
+      <p class="eyebrow">Dev track</p>
+      <h1>Builds, previews &amp; log</h1>
+      <p class="legal__meta">Internal page for the project team — excluded from search engines and not linked in the public navigation.</p>
+    </header>
+
+    <div class="dev__grid">
+      <section class="dev__card" aria-labelledby="dev-build">
+        <h2 id="dev-build">This build</h2>
+        <dl class="facts">
+          <div class="facts__row"><dt>Version</dt><dd><code>{{ build.version }}</code></dd></div>
+          <div class="facts__row"><dt>Environment</dt><dd><code>{{ build.env }}</code></dd></div>
+          <div class="facts__row"><dt>Branch</dt><dd><code>{{ build.branch }}</code></dd></div>
+          <div class="facts__row"><dt>Commit</dt><dd><a href="{{ config.site.repo }}/commit/{{ build.sha }}"><code>{{ build.shortSha }}</code></a></dd></div>
+          <div class="facts__row"><dt>Built</dt><dd><time datetime="{{ build.builtAt }}">{{ build.builtAt }}</time></dd></div>
+          <div class="facts__row"><dt>Indexing</dt><dd>{{ meta.robots }}</dd></div>
+        </dl>
+      </section>
+      <section class="dev__card" aria-labelledby="dev-previews">
+        <h2 id="dev-previews">Branch previews</h2>
+        <ul class="dev__previews" data-previews><li class="muted-dark">Loading deployment index…</li></ul>
+      </section>
+    </div>
+
+    <section class="dev__log-wrap" aria-labelledby="dev-log">
+      <h2 id="dev-log">Development log</h2>
+      <ol class="dev__log" data-devlog><li class="muted-dark">Loading…</li></ol>
+      <p class="legal__meta">Full narrative log: <a href="{{ config.site.repo }}/blob/{{ build.branch }}/docs/DEVLOG.md">docs/DEVLOG.md</a></p>
+    </section>
+  </div>
+</main>
+<!-- @include footer -->
+<!-- @include scripts -->
+<script type="module" src="{{ root }}assets/js/dev.js?v={{ build.v }}"></script>
+</body>
+</html>

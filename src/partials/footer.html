@@ -1,0 +1,50 @@
+<footer class="site-footer" data-section="footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <a class="brand brand--footer" href="{{ nav }}#top" aria-label="{{ firm.name }} — back to top">
+          <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#rl-mark"/></svg>
+          <span class="brand__word">Rumpf Law<span class="brand__pc">, P.C.</span></span>
+        </a>
+        <p class="site-footer__lede">Attorneys at law in {{ firm.address.municipality }}, serving southern Ocean County, New Jersey.</p>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__heading">Office</h2>
+        <address>
+          {{ firm.address.street }}<br>
+          {{ firm.address.locality }}, {{ firm.address.region }} {{ firm.address.postalCode }}<br>
+          <span class="muted">({{ firm.address.municipality }})</span>
+        </address>
+        <p><a href="{{ firm.directionsUrl }}" rel="noopener" target="_blank" data-track="cta_click" data-cta="footer_directions">Directions<span class="sr-only"> (opens in a new tab)</span></a></p>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__heading">Reach us</h2>
+        <ul class="site-footer__list">
+          <li><span class="muted">Phone</span> <a href="tel:{{ firm.phone.e164 }}" data-track="cta_click" data-cta="footer_call">{{ firm.phone.display }}</a></li>
+          <li><span class="muted">Fax</span> {{ firm.fax.display }}</li>
+          <li><span class="muted">Hours</span> {{ firm.hours.short }}</li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h2 class="site-footer__heading">Explore</h2>
+        <ul class="site-footer__list">
+          <li><a href="{{ nav }}#practice">Practice areas</a></li>
+          <li><a href="{{ nav }}#attorneys">Attorneys</a></li>
+          <li><a href="{{ nav }}#faq">Questions</a></li>
+          <li><a href="{{ root }}privacy.html">Privacy</a></li>
+          <li><a href="{{ root }}disclaimer.html">Legal notices</a></li>
+          <li><a href="{{ root }}accessibility.html">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__legal">
+      <p><strong>Attorney advertising.</strong> The information on this website is for general informational purposes only and is not legal advice. Viewing this site, or contacting the firm by phone or online, does not create an attorney-client relationship. Please do not send confidential information until we have confirmed in writing that we represent you. Prior results do not guarantee a similar outcome.</p>
+      <p>{{ firm.name }} is a debt relief agency. We help people file for bankruptcy relief under the Bankruptcy Code.</p>
+      <p>Attorney responsible for this website’s content: {{ firm.responsibleAttorney.name }}, {{ firm.address.street }}, {{ firm.address.locality }}, {{ firm.address.region }} {{ firm.address.postalCode }}.</p>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© {{ meta.year }} {{ firm.name }} All rights reserved.</p>
+      {{{ meta.previewBadge }}}
+    </div>
+  </div>
+</footer>

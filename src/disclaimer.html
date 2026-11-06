@@ -1,0 +1,51 @@
+<!-- @page {"path":"disclaimer.html","title":"Legal Notices — Rumpf Law, P.C.","description":"Attorney advertising, disclaimers and legal notices for the Rumpf Law, P.C. website.","bodyClass":"page-legal"} -->
+<!doctype html>
+<html lang="en" class="no-js {{ meta.envClass }}">
+<head>
+<!-- @include head -->
+</head>
+<body class="{{ page.bodyClass }}">
+<!-- @include header -->
+<main id="main" tabindex="-1" class="legal">
+  <div class="container">
+    <header class="legal__head">
+      <p class="eyebrow">Legal</p>
+      <h1>Legal notices</h1>
+      <p class="legal__meta">Effective November 6, 2026</p>
+    </header>
+    <div class="prose">
+      <p class="draft-banner"><strong>Draft for review.</strong> These notices should be reviewed and approved by {{ firm.name }} before launch.</p>
+
+      <h2>Attorney advertising</h2>
+      <p>This website is attorney advertising. The attorney responsible for its content is {{ firm.responsibleAttorney.name }}, {{ firm.name }}, {{ firm.address.street }}, {{ firm.address.locality }}, {{ firm.address.region }} {{ firm.address.postalCode }}.</p>
+
+      <h2>No legal advice</h2>
+      <p>The material on this website is general information. It is not legal advice and should not be relied on for any specific situation. Laws change, and the right answer depends on the facts. Please consult an attorney about your particular circumstances.</p>
+
+      <h2>No attorney-client relationship</h2>
+      <p>Viewing this website, calling the office, or sending a message through this site does not create an attorney-client relationship. A relationship is formed only after we have checked for conflicts of interest and agreed, in writing, to represent you. Until then, please do not send confidential information.</p>
+
+      <h2>Licensing and practice areas</h2>
+      <p>The attorneys of {{ firm.name }} practice law in New Jersey. Descriptions of practice areas on this website indicate the kinds of matters we handle; they do not mean that any attorney is certified by the Supreme Court of New Jersey in a particular area of law.</p>
+
+      <h2>No guarantee of results</h2>
+      <p>Every matter is different. Any description of the services we provide is not a promise or guarantee of a particular outcome.</p>
+
+      <h2>Public appointments and service</h2>
+      <p>References to the public appointments and public service of the firm’s attorneys are biographical. They do not imply the endorsement of any government body, and nothing on this website suggests an ability to influence any court, agency or public official.</p>
+
+      <h2>Bankruptcy services</h2>
+      <p>{{ firm.name }} is a debt relief agency. We help people file for bankruptcy relief under the Bankruptcy Code.</p>
+
+      <h2>Third-party links</h2>
+      <p>Links to other websites are provided for convenience. We are not responsible for the content or privacy practices of those sites.</p>
+
+      <h2>Contact</h2>
+      <p>{{ firm.name }}<br>{{ firm.address.street }}<br>{{ firm.address.locality }}, {{ firm.address.region }} {{ firm.address.postalCode }}<br><a href="tel:{{ firm.phone.e164 }}">{{ firm.phone.display }}</a></p>
+    </div>
+  </div>
+</main>
+<!-- @include footer -->
+<!-- @include scripts -->
+</body>
+</html>

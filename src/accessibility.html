@@ -1,0 +1,37 @@
+<!-- @page {"path":"accessibility.html","title":"Accessibility — Rumpf Law, P.C.","description":"Accessibility statement for the Rumpf Law, P.C. website.","bodyClass":"page-legal"} -->
+<!doctype html>
+<html lang="en" class="no-js {{ meta.envClass }}">
+<head>
+<!-- @include head -->
+</head>
+<body class="{{ page.bodyClass }}">
+<!-- @include header -->
+<main id="main" tabindex="-1" class="legal">
+  <div class="container">
+    <header class="legal__head">
+      <p class="eyebrow">Legal</p>
+      <h1>Accessibility</h1>
+      <p class="legal__meta">Effective November 6, 2026</p>
+    </header>
+    <div class="prose">
+      <p>{{ firm.name }} wants everyone to be able to use this website. We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at Level AA.</p>
+
+      <h2>What we’ve done</h2>
+      <ul>
+        <li><strong>Motion you control.</strong> The site uses scroll-linked animation. If your device is set to reduce motion, all scroll animation, smooth scrolling and the opening sequence are turned off and the page scrolls normally.</li>
+        <li><strong>Keyboard access.</strong> Every link, menu and form control can be reached and used with a keyboard, with a visible focus indicator and a “skip to main content” link.</li>
+        <li><strong>Readable text.</strong> Body text meets WCAG AA contrast, scales with your browser’s text size, and the layout adapts to narrow screens and zoom.</li>
+        <li><strong>Structure.</strong> Pages use meaningful headings and landmarks, and decorative graphics are hidden from screen readers. The service-area chart has a text description and the same towns are listed in text.</li>
+        <li><strong>Forms.</strong> Every field has a visible label, and errors are described in text and announced to assistive technology.</li>
+        <li><strong>Works without scripts.</strong> All content is in the page itself; if JavaScript is unavailable, content is shown without animation.</li>
+      </ul>
+
+      <h2>Feedback</h2>
+      <p>If any part of this site is difficult to use, please call us at <a href="tel:{{ firm.phone.e164 }}">{{ firm.phone.display }}</a> or write to {{ firm.address.street }}, {{ firm.address.locality }}, {{ firm.address.region }} {{ firm.address.postalCode }}. We will work with you to provide the information you need and to fix the problem.</p>
+    </div>
+  </div>
+</main>
+<!-- @include footer -->
+<!-- @include scripts -->
+</body>
+</html>

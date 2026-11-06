@@ -1,0 +1,81 @@
+{
+  "$comment": "Single source of truth for firm facts + runtime config. Every fact carries provenance. Items with verified:false MUST be confirmed by the firm before launch — see docs/CONTENT_REVIEW.md.",
+  "firm": {
+    "name": "Rumpf Law, P.C.",
+    "shortName": "Rumpf Law",
+    "tagline": "Clear counsel, close to home.",
+    "description": "Rumpf Law, P.C. is a family-run law practice in Little Egg Harbor Township (Tuckerton), New Jersey, serving southern Ocean County in real estate, wills and estates, family law, municipal court, personal injury and workers' compensation, and bankruptcy matters.",
+    "nameSource": { "value": "Rumpf Law, P.C.", "source": "Little Egg Harbor Twp. 2026 Professional Services Notice; Ocean County Gov. Directory (Stafford Twp.)", "verified": true, "note": "Wikipedia lists a prior/alternate name 'Rumpf, Rumpf and Reid'; directories list 'Brian E. Rumpf, P.C.' and 'Law Office of Brian Rumpf PC'." },
+    "address": {
+      "street": "11 Leifried Lane",
+      "locality": "Tuckerton",
+      "region": "NJ",
+      "regionName": "New Jersey",
+      "postalCode": "08087",
+      "country": "US",
+      "municipality": "Little Egg Harbor Township",
+      "county": "Ocean County",
+      "source": "Little Egg Harbor Twp. 2026 Professional Services Notice (official)",
+      "verified": true
+    },
+    "geo": { "lat": 39.6029, "lng": -74.3404, "display": "39°36′ N · 74°20′ W", "precision": "town-level (Tuckerton), not the office door" },
+    "phone": { "display": "(609) 294-2227", "e164": "+16092942227", "source": "FindLaw listing (updated 2024-02-18) + directories", "verified": false },
+    "fax": { "display": "(609) 294-3354", "source": "FindLaw listing (updated 2024-02-18)", "verified": false },
+    "email": null,
+    "hours": {
+      "display": "Monday – Friday, 9:00 a.m. – 4:00 p.m.",
+      "short": "Mon–Fri · 9–4",
+      "schema": ["Mo-Fr 09:00-16:00"],
+      "source": "Business listing (Birdeye/Google)",
+      "verified": false
+    },
+    "responsibleAttorney": { "name": "Brian E. Rumpf, Esq.", "verified": false, "note": "Firm to designate the attorney responsible for website content." },
+    "directionsUrl": "https://www.google.com/maps/search/?api=1&query=11+Leifried+Lane%2C+Tuckerton%2C+NJ+08087",
+    "appleMapsUrl": "https://maps.apple.com/?q=11+Leifried+Lane,+Tuckerton,+NJ+08087"
+  },
+  "attorneys": [
+    {
+      "id": "brian-rumpf",
+      "name": "Brian E. Rumpf",
+      "honorific": "Esq.",
+      "role": "Partner",
+      "alumniOf": ["Washington and Lee University School of Law", "The Catholic University of America"],
+      "sources": ["Wikipedia: Brian E. Rumpf", "Ocean County Gov. Directory — Stafford Twp. Public Defender", "Martindale/Avvo practice-area listings"]
+    },
+    {
+      "id": "debra-rumpf",
+      "name": "Debra Rumpf",
+      "honorific": "Esq.",
+      "role": "Partner",
+      "alumniOf": [],
+      "sources": ["Little Egg Harbor Twp. 2026 Professional Services Notice", "leht.com Zoning Board page", "Ocean Twp. (Waretown) Zoning Board of Adjustment agendas, 2025", "Martindale practice-area listing"]
+    }
+  ],
+  "serviceArea": ["Little Egg Harbor Township", "Tuckerton", "Mystic Island", "Stafford Township", "Manahawkin", "Eagleswood Township", "West Creek", "Bass River Township", "New Gretna", "Barnegat", "Ocean Township", "Waretown", "Long Beach Island", "Ocean County"],
+  "site": {
+    "url": "",
+    "locale": "en_US",
+    "themeColor": "#0E1C28",
+    "repo": "https://github.com/Domusgpt/Rumpflaw"
+  },
+  "seo": {
+    "allowIndexing": false,
+    "$comment": "Keep false until the firm approves content AND a custom domain the firm owns is configured. NOTE: www.rumpflaw.com currently serves an unrelated Wisconsin firm (Rumpf Law Office, S.C.) — do not point this site at that domain."
+  },
+  "forms": {
+    "inquiry": {
+      "adapter": "auto",
+      "endpoint": "",
+      "$comment": "adapter: auto | demo | endpoint | disabled. auto = demo on preview/development, endpoint in production when set, otherwise disabled (call-us fallback). Firebase function scaffold: integrations/firebase."
+    }
+  },
+  "telemetry": {
+    "adapter": "auto",
+    "endpoint": "",
+    "plausibleDomain": "",
+    "sampleRate": 1,
+    "respectGPC": true,
+    "requiresConsent": false,
+    "$comment": "adapter: auto | none | console | beacon | plausible. auto = console in development, none elsewhere until configured. Global Privacy Control / Do Not Track fully disables telemetry."
+  }
+}

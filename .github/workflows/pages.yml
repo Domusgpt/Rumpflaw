@@ -1,0 +1,52 @@
+name: Deploy · GitHub Pages (main + branch previews)
+
+# Every push rebuilds main (→ /) and each recently-updated branch (→ /preview/<branch>/)
+# and publishes the result as a single-commit `gh-pages` branch.
+# One-time repo setting: Settings → Pages → Source: "Deploy from a branch" → gh-pages / (root).
+on:
+  push:
+    branches: ['**', '!gh-pages']
+  delete:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out all branches
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build main + recent branch previews
+        env:
+          PREVIEW_MAX_AGE_DAYS: '45'
+          PREVIEW_MAX_COUNT: '12'
+        run: node scripts/deploy-pages.mjs
+
+      - name: Publish to gh-pages
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd _site
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Deploy ${GITHUB_SHA::7} (${GITHUB_REF_NAME}) — $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -qf "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+          echo "### Deployed" >> "$GITHUB_STEP_SUMMARY"
+          echo "Index: https://${GITHUB_REPOSITORY_OWNER,,}.github.io/${GITHUB_REPOSITORY#*/}/previews.json" >> "$GITHUB_STEP_SUMMARY"

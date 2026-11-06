@@ -1,0 +1,43 @@
+name: CI · build, unit, e2e, visual
+
+on:
+  push:
+    branches-ignore: ['gh-pages']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install Playwright (pinned) + Chromium
+        run: npm i --no-save playwright@1.63.0 && npx playwright install --with-deps chromium
+      - name: Build (preview)
+        run: SITE_ENV=preview node scripts/build.mjs
+      - name: Unit tests
+        run: node --test 'tests/unit/*.test.mjs'
+      - name: End-to-end QA (a11y, motion integrity, forms, perf budget)
+        run: node tests/e2e.mjs
+      - name: Visual capture
+        if: always()
+        run: node tests/visual.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-review
+          path: .artifacts/visual/*.png
+          retention-days: 14

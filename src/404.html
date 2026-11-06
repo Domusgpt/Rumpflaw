@@ -1,0 +1,22 @@
+<!-- @page {"path":"404.html","title":"Page not found — Rumpf Law, P.C.","description":"The page you requested could not be found.","bodyClass":"page-plain","robots":"noindex","sitemap":false,"absolute":true} -->
+<!doctype html>
+<html lang="en" class="no-js {{ meta.envClass }}">
+<head>
+<!-- @include head -->
+</head>
+<body class="{{ page.bodyClass }}">
+<!-- @include header -->
+<main id="main" tabindex="-1">
+  <section class="notfound" aria-labelledby="nf-title">
+    <div>
+      <p class="eyebrow eyebrow--light">Error 404</p>
+      <h1 id="nf-title">We couldn’t find that page.</h1>
+      <p>The link may be out of date, or the page may have moved. You can head back to the home page or call the office at {{ firm.phone.display }}.</p>
+      <a class="btn btn--brass" href="{{ root }}index.html"><span>Return home</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+</main>
+<!-- @include footer -->
+<!-- @include scripts -->
+</body>
+</html>
